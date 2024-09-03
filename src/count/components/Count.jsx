@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Link } from "react-router-dom";
 
 const Count = () => {
   const [counts, setCounts] = useState([0, 0]);
@@ -47,19 +48,19 @@ const Count = () => {
 
       <div className="d-flex justify-content-center g-4 mt-5">
         <button className="btn btn-danger mx-2">
-          <a href="/Calculator" className="text-decoration-none">
+          <Link to="/Calculator" className="text-decoration-none">
             BMI Calaculator
-          </a>
+          </Link>
         </button>
         <button className="btn btn-info mx-2">
-          <a href="/crud" className="text-decoration-none">
+          <Link to="/crud" className="text-decoration-none">
             CRUD
-          </a>
+          </Link>
         </button>
         <button className="btn btn-dark mx-2">
-          <a href="/todolist" className="text-decoration-none">
+          <Link to="/todolist" className="text-decoration-none">
             ToDoList
-          </a>
+          </Link>
         </button>
       </div>
     </div>
