@@ -1,15 +1,15 @@
 export async function fetchPosts() {
-  const response = await fetch("http://localhost:3000/posts");
+  const response = await fetch(`${import.meta.env.VITE_API_URL}posts`);
   return response.json();
 }
 
 export async function fetchPost(id) {
-  const response = await fetch(`http://localhost:3000/posts/${id}`);
+  const response = await fetch(`${import.meta.env.VITE_API_URL}posts/${id}`);
   return response.json();
 }
 
 export async function createPost(newPost) {
-  const response = await fetch(`http://localhost:3000/posts`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}posts`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -21,7 +21,7 @@ export async function createPost(newPost) {
 
 export async function updatePost(updatedPost) {
   const response = await fetch(
-    `http://localhost:3000/posts/${updatedPost.id}`,
+    `${import.meta.env.VITE_API_URL}posts/${updatedPost.id}`,
     {
       method: "PUT",
       headers: {
@@ -34,7 +34,7 @@ export async function updatePost(updatedPost) {
 }
 
 export async function deletePost(id) {
-  const response = await fetch(`http://localhost:3000/posts/${id}`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}posts/${id}`, {
     method: "DELETE",
   });
   return response.json();
